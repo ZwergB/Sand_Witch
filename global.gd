@@ -1,10 +1,13 @@
 extends Node2D
+
 class Potion:
-	var index = 0
-	var succeeded = false
 	var recipe = [0,0]
 	var color
 	var potionName = ""
+	func _init(_recipe,_color, _potionName):
+		recipe = _recipe
+		color = _color
+		potionName = _potionName
 
 class Ingredient:
 	var index = 0
@@ -14,8 +17,6 @@ class Ingredient:
 		index = _index
 		position = _position
 		ingredientName = _ingredientName
-var inventory = [0,0,0,0,0,0,0]
-
 
 var ingredients = [Ingredient.new(0,[2,3],"Glühwürmchen Sekret"), 
 Ingredient.new(1,[4,-1],"Blut"), 
@@ -24,6 +25,10 @@ Ingredient.new(3,[0,-3],"Rückenflosse einer Rotfeder"),
 Ingredient.new(4,[0,-2],"Fledermausflügel"), 
 Ingredient.new(5,[2,-2],"Giftdrüse einer Schwarzen Witwe"), 
 Ingredient.new(6,[-2,0],"Froschschenkel eines Grasfrosches")]
+
+var potions = []
+
+var inventory = [0,0,0,0,0,0,0]
 
 var moonPhase = 0
 
