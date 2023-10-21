@@ -1,10 +1,10 @@
-extends AnimatableBody2D
-var active = false
+extends StaticBody2D
+var active = true
 var mouseInside = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$AnimatedSprite2D.play("default")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

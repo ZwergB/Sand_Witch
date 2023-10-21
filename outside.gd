@@ -5,6 +5,8 @@ extends Node2D
 @onready var time2 = $Timer2
 @onready var background = $Sprite2D
 
+@onready var collectable = [$Fledermaus]
+
 var moonPhase
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,15 @@ func _ready():
 func _process(delta):
 	pass
 
+func _input(event):
+	if event is InputEventMouseButton:
+		var i = 0
+		while i<collectable.size():
+			if collectable[i].active:
+				if event.pressed and collectable[i].mouseInside:
+					collectable[i].active = false
+					global.inventory[i] +=1
+		i += 1
 
 func _on_timer_1_timeout():
 	if moonPhase == 0:
@@ -28,7 +39,7 @@ func _on_timer_1_timeout():
 
 
 func _on_timer_2_timeout():
-	pass # Replace with function body.
+	collectable[randi() %collectable.size()].active = true
 	
 func moon0():
 	pass
