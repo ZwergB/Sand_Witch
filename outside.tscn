@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxm53uj0wdlb2"]
+[gd_scene load_steps=4 format=3 uid="uid://bxm53uj0wdlb2"]
 
 [ext_resource type="Script" path="res://outside.gd" id="1_d521s"]
 [ext_resource type="Texture2D" uid="uid://degg1464r7kbo" path="res://assets/Outside.jpg" id="2_h0x7c"]
+[ext_resource type="AudioStream" uid="uid://ckx1vv3j26wse" path="res://assets/sounds/outside_Ambient.wav" id="3_fico2"]
 
 [node name="outside" type="Node2D"]
 script = ExtResource("1_d521s")
@@ -17,6 +18,10 @@ autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
 autostart = true
+
+[node name="background_ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fico2")
+autoplay = true
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
