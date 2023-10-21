@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxm53uj0wdlb2"]
+[gd_scene load_steps=4 format=3 uid="uid://bxm53uj0wdlb2"]
 
 [ext_resource type="Script" path="res://outside.gd" id="1_d521s"]
 [ext_resource type="Texture2D" uid="uid://degg1464r7kbo" path="res://assets/Outside.jpg" id="2_h0x7c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3u2r1"]
+radius = 16.0
+height = 64.0
 
 [node name="outside" type="Node2D"]
 script = ExtResource("1_d521s")
@@ -17,6 +21,12 @@ autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
 autostart = true
+
+[node name="Fledermaus" type="AnimatableBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fledermaus"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3u2r1")
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
