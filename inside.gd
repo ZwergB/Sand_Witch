@@ -5,6 +5,7 @@ extends Node2D
 var cauldron = []
 var cauldron_colour = [0,0]
 
+
 func pour_item(index):
 	if(get_parent().inventory[index] > 0):
 		get_parent().inventory[index] -= 1
