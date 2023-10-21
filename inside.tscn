@@ -1,7 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://7f0c5075mi8c"]
+[gd_scene load_steps=19 format=3 uid="uid://7f0c5075mi8c"]
 
 [ext_resource type="Script" path="res://inside.gd" id="1_kcdjn"]
+[ext_resource type="Texture2D" uid="uid://dujpcdmb6ox44" path="res://assets/beispielitem.jpg" id="3_jiays"]
+[ext_resource type="Texture2D" uid="uid://dm7au4d0ni66i" path="res://assets/Brewing_Space_3.jpg" id="2_1jdsr"]
 [ext_resource type="Texture2D" uid="uid://bnopwxkwky5js" path="res://assets/Brewing Space 4.jpg" id="2_7dwrs"]
+[ext_resource type="Texture2D" uid="uid://tkeny5dwsyx1" path="res://assets/Brewing Scene pot.png" id="5_ltk0v"]
 [ext_resource type="Texture2D" uid="uid://bj56sg2e1mkq7" path="res://assets/FireAnimatioInside.png" id="3_nck5y"]
 [ext_resource type="Texture2D" uid="uid://cujpsevx2l2qo" path="res://assets/Blut.png" id="5_pwnup"]
 [ext_resource type="Theme" uid="uid://0y40gsdf1jjn" path="res://inside_label.tres" id="5_w1m1w"]
@@ -137,7 +140,6 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8y5t3"]
 _data = {
-"RESET": SubResource("Animation_8kagw"),
 "kesselfeuer": SubResource("Animation_nocll")
 }
 
@@ -165,10 +167,22 @@ size = Vector2(95, 161)
 [node name="inside" type="Node2D"]
 script = ExtResource("1_kcdjn")
 
+<<<<<<< HEAD
 [node name="Brewing Space" type="Sprite2D" parent="."]
 texture = ExtResource("2_7dwrs")
 
 [node name="Fire" type="AnimatedSprite2D" parent="."]
+=======
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("2_1jdsr")
+
+[node name="Item" type="Sprite2D" parent="."]
+position = Vector2(2, -247)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_jiays")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+>>>>>>> 064facfab7127c63261415254b128c2e45b5beeb
 position = Vector2(0, 294)
 sprite_frames = SubResource("SpriteFrames_f8dke")
 
@@ -178,6 +192,7 @@ libraries = {
 "": SubResource("AnimationLibrary_8y5t3")
 }
 
+<<<<<<< HEAD
 [node name="Blut" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Blut"]
@@ -296,3 +311,7 @@ offset_right = 27.5
 offset_bottom = 92.5
 theme = ExtResource("5_w1m1w")
 text = "255"
+=======
+[node name="topf" type="Sprite2D" parent="."]
+texture = ExtResource("5_ltk0v")
+>>>>>>> 064facfab7127c63261415254b128c2e45b5beeb
