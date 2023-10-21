@@ -14,7 +14,7 @@ class Ingredient:
 		index = _index
 		position = _position
 		ingredientName = _ingredientName
-var inventory = []
+var inventory = [0,0,0,0,0,0,0]
 
 
 var ingredients = [Ingredient.new(0,[2,3],"Glühwürmchen Sekret"), Ingredient.new(1,[4,-1],"Blut"), Ingredient.new(2,[0,0],"Mondblume"), 
