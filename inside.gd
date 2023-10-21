@@ -2,6 +2,7 @@ extends Node2D
 
 var cauldron
 
+
 func pour_item(index):
 	if(get_parent().inventory[index] > 0):
 		get_parent().invetory[index] -= 1
