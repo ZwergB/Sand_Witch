@@ -18,6 +18,9 @@ class Ingredient:
 		position = _position
 		ingredientName = _ingredientName
 
+@onready var dayScene = load("res://inside.tscn").instantiate()
+@onready var nightScene = load("res://outside.tscn").instantiate()
+
 var ingredients = [Ingredient.new(0,[2,3],"Glühwürmchen Sekret"), 
 	Ingredient.new(1,[4,-1],"Blut"), 
 	Ingredient.new(2,[0,0],"Mondblume"), 
@@ -229,6 +232,8 @@ var inventory = [0,0,0,0,0,0,0]
 
 var moonPhase = 0
 
+var day = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -238,3 +243,11 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
+	if Input.is_action_just_pressed("ui_accept"):
+		if day:
+			remove_child($inside)
+			add_child(nightScene)
+		else:
+			remove_child($outside)
+			add_child(dayScene)
+		day = !day

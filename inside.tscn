@@ -1,19 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://7f0c5075mi8c"]
+[gd_scene load_steps=18 format=3 uid="uid://7smtn1clgk3f"]
 
 [ext_resource type="Script" path="res://inside.gd" id="1_kcdjn"]
-[ext_resource type="Texture2D" uid="uid://dujpcdmb6ox44" path="res://assets/beispielitem.jpg" id="3_jiays"]
 [ext_resource type="Texture2D" uid="uid://dm7au4d0ni66i" path="res://assets/Brewing_Space_3.jpg" id="2_1jdsr"]
-[ext_resource type="Texture2D" uid="uid://bnopwxkwky5js" path="res://assets/Brewing Space 4.jpg" id="2_7dwrs"]
-[ext_resource type="Texture2D" uid="uid://tkeny5dwsyx1" path="res://assets/Brewing Scene pot.png" id="5_ltk0v"]
 [ext_resource type="Texture2D" uid="uid://bj56sg2e1mkq7" path="res://assets/FireAnimatioInside.png" id="3_nck5y"]
-[ext_resource type="Texture2D" uid="uid://cujpsevx2l2qo" path="res://assets/Blut.png" id="5_pwnup"]
-[ext_resource type="Theme" uid="uid://0y40gsdf1jjn" path="res://inside_label.tres" id="5_w1m1w"]
-[ext_resource type="Texture2D" uid="uid://do178whxev35x" path="res://assets/Fledermausflügel.png" id="6_5b2xy"]
-[ext_resource type="Texture2D" uid="uid://dls25f2iprlj5" path="res://assets/Froschschenkel.png" id="7_01anj"]
-[ext_resource type="Texture2D" uid="uid://b5wodnw832l6g" path="res://assets/GlühwürmchenSekret.png" id="8_2rkqj"]
-[ext_resource type="Texture2D" uid="uid://cwdcpjy56xii4" path="res://assets/Mondblume.png" id="9_mda0r"]
-[ext_resource type="Texture2D" uid="uid://puvn0o35cogy" path="res://assets/Rückenflosse.png" id="10_gfh0t"]
-[ext_resource type="Texture2D" uid="uid://cw6ybdql0c5dm" path="res://assets/SPinnengift.png" id="11_rhidb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8btg8"]
 atlas = ExtResource("3_nck5y")
@@ -98,7 +87,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Fire:frame")
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -115,8 +104,8 @@ loop_mode = 1
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("Fire:animation")
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -128,7 +117,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Fire:frame")
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -140,178 +129,22 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8y5t3"]
 _data = {
+"RESET": SubResource("Animation_8kagw"),
 "kesselfeuer": SubResource("Animation_nocll")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wanxn"]
-size = Vector2(102, 167)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aaiwh"]
-size = Vector2(251, 69)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdgsl"]
-size = Vector2(207, 76)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj8xw"]
-size = Vector2(89, 149)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwr26"]
-size = Vector2(142, 157)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eqnl"]
-size = Vector2(241, 57)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_inkvb"]
-size = Vector2(95, 161)
 
 [node name="inside" type="Node2D"]
 script = ExtResource("1_kcdjn")
 
-<<<<<<< HEAD
-[node name="Brewing Space" type="Sprite2D" parent="."]
-texture = ExtResource("2_7dwrs")
-
-[node name="Fire" type="AnimatedSprite2D" parent="."]
-=======
-[node name="background" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1jdsr")
 
-[node name="Item" type="Sprite2D" parent="."]
-position = Vector2(2, -247)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_jiays")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
->>>>>>> 064facfab7127c63261415254b128c2e45b5beeb
 position = Vector2(0, 294)
 sprite_frames = SubResource("SpriteFrames_f8dke")
 
-[node name="Fire Animation" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "kesselfeuer"
 libraries = {
 "": SubResource("AnimationLibrary_8y5t3")
 }
-
-<<<<<<< HEAD
-[node name="Blut" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Blut"]
-texture = ExtResource("5_pwnup")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Blut"]
-position = Vector2(164, -201.5)
-shape = SubResource("RectangleShape2D_wanxn")
-
-[node name="Label" type="Label" parent="Blut/CollisionShape2D"]
-offset_left = -6.0
-offset_top = 56.5
-offset_right = 48.0
-offset_bottom = 102.5
-theme = ExtResource("5_w1m1w")
-text = "255"
-
-[node name="Fledermausflügel" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Fledermausflügel"]
-texture = ExtResource("6_5b2xy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fledermausflügel"]
-position = Vector2(-4.5, -378.5)
-shape = SubResource("RectangleShape2D_aaiwh")
-
-[node name="Label" type="Label" parent="Fledermausflügel/CollisionShape2D"]
-offset_left = 20.5
-offset_top = 7.5
-offset_right = 71.5
-offset_bottom = 50.5
-theme = ExtResource("5_w1m1w")
-text = "255"
-
-[node name="Froschschenkel" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Froschschenkel"]
-texture = ExtResource("7_01anj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Froschschenkel"]
-position = Vector2(-483.5, -141)
-shape = SubResource("RectangleShape2D_tdgsl")
-
-[node name="Label" type="Label" parent="Froschschenkel/CollisionShape2D"]
-offset_left = -5.5
-offset_top = 1.0
-offset_right = 45.5
-offset_bottom = 44.0
-theme = ExtResource("5_w1m1w")
-text = "255"
-
-[node name="Glühwürmchensekret" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Glühwürmchensekret"]
-texture = ExtResource("8_2rkqj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Glühwürmchensekret"]
-position = Vector2(-699.5, 6.5)
-shape = SubResource("RectangleShape2D_nj8xw")
-
-[node name="Label" type="Label" parent="Glühwürmchensekret/CollisionShape2D"]
-offset_left = -5.5
-offset_top = 50.5
-offset_right = 45.5
-offset_bottom = 93.5
-theme = ExtResource("5_w1m1w")
-text = "255"
-
-[node name="Mondblume" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Mondblume"]
-texture = ExtResource("9_mda0r")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mondblume"]
-position = Vector2(427, 11.5)
-shape = SubResource("RectangleShape2D_dwr26")
-
-[node name="Label" type="Label" parent="Mondblume/CollisionShape2D"]
-offset_left = 10.0
-offset_top = 33.5
-offset_right = 61.0
-offset_bottom = 76.5
-theme = ExtResource("5_w1m1w")
-text = "255"
-
-[node name="Rückenflosse" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Rückenflosse"]
-texture = ExtResource("10_gfh0t")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rückenflosse"]
-position = Vector2(514.5, -371.5)
-shape = SubResource("RectangleShape2D_4eqnl")
-
-[node name="Label" type="Label" parent="Rückenflosse/CollisionShape2D"]
-offset_left = 38.5
-offset_top = 5.5
-offset_right = 89.5
-offset_bottom = 48.5
-theme = ExtResource("5_w1m1w")
-text = "255"
-
-[node name="Spinnengift" type="Area2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Spinnengift"]
-texture = ExtResource("11_rhidb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Spinnengift"]
-position = Vector2(592.5, 12.5)
-shape = SubResource("RectangleShape2D_inkvb")
-
-[node name="Label" type="Label" parent="Spinnengift/CollisionShape2D"]
-offset_left = -23.5
-offset_top = 49.5
-offset_right = 27.5
-offset_bottom = 92.5
-theme = ExtResource("5_w1m1w")
-text = "255"
-=======
-[node name="topf" type="Sprite2D" parent="."]
-texture = ExtResource("5_ltk0v")
->>>>>>> 064facfab7127c63261415254b128c2e45b5beeb
