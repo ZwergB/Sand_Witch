@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://outside.gd" id="1_d521s"]
 [ext_resource type="Texture2D" uid="uid://degg1464r7kbo" path="res://assets/Outside.jpg" id="2_h0x7c"]
 [ext_resource type="Script" path="res://Clickable.gd" id="3_75vul"]
-[ext_resource type="Texture2D" uid="uid://b1piqo3bewcfy" path="res://assets/frame0000.png" id="4_70w0n"]
-[ext_resource type="Texture2D" uid="uid://cha2u703kq6jv" path="res://assets/frame0001.png" id="5_qivg2"]
-[ext_resource type="AudioStream" uid="uid://bnb4f8m0gxutk" path="res://assets/sounds/outside_Ambient.wav" id="6_5dber"]
+[ext_resource type="Texture2D" uid="uid://dtnw4qc32ahr0" path="res://assets/frame0000.png" id="4_70w0n"]
+[ext_resource type="Texture2D" uid="uid://cwpsgftq1vt8n" path="res://assets/frame0001.png" id="5_qivg2"]
+[ext_resource type="AudioStream" uid="uid://ckx1vv3j26wse" path="res://assets/sounds/outside_Ambient.wav" id="6_5dber"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3u2r1"]
 radius = 22.0
@@ -56,7 +56,12 @@ shape = SubResource("CapsuleShape2D_3u2r1")
 z_index = 1
 position = Vector2(-9, 1)
 sprite_frames = SubResource("SpriteFrames_pr43b")
-frame_progress = 0.282079
+frame_progress = 0.790868
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5dber")
+volume_db = -26.234
+autoplay = true
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
