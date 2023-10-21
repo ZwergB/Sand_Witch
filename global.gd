@@ -10,6 +10,10 @@ class Ingredient:
 	var index = 0
 	var position = [0,0]
 	var ingredientName = ""
+
+var ingredients = [Ingredient.new(), Ingredient.new(), Ingredient.new(), 
+Ingredient.new(), Ingredient.new()]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
