@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://7f0c5075mi8c"]
+[gd_scene load_steps=3 format=3 uid="uid://7f0c5075mi8c"]
 
 [ext_resource type="Script" path="res://inside.gd" id="1_kcdjn"]
+[ext_resource type="Texture2D" uid="uid://dm7au4d0ni66i" path="res://assets/Brewing_Space_3.jpg" id="2_1jdsr"]
 
 [node name="inside" type="Node2D"]
 script = ExtResource("1_kcdjn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1jdsr")
