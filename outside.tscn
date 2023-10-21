@@ -5,6 +5,8 @@
 [ext_resource type="Script" path="res://Clickable.gd" id="3_75vul"]
 [ext_resource type="Texture2D" uid="uid://b1piqo3bewcfy" path="res://assets/frame0000.png" id="4_70w0n"]
 [ext_resource type="Texture2D" uid="uid://cha2u703kq6jv" path="res://assets/frame0001.png" id="5_qivg2"]
+[gd_scene load_steps=5 format=3 uid="uid://bxm53uj0wdlb2"]
+[ext_resource type="AudioStream" uid="uid://ckx1vv3j26wse" path="res://assets/sounds/outside_Ambient.wav" id="3_fico2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3u2r1"]
 radius = 22.0
@@ -38,6 +40,10 @@ autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
 autostart = true
+
+[node name="background_ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fico2")
+autoplay = true
 
 [node name="Fledermaus" type="AnimatableBody2D" parent="."]
 script = ExtResource("3_75vul")
