@@ -25,7 +25,7 @@ func _input(event):
 				if event.pressed and collectable[i].mouseInside:
 					collectable[i].active = false
 					global.inventory[i] +=1
-		i += 1
+			i += 1
 
 func _on_timer_1_timeout():
 	if moonPhase == 0:
