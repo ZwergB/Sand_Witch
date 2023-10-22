@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var global = get_parent()
-@onready var color = $PotionColors
 @onready var ingrediantInstatce = [
 	get_node("Ingredient Rückenflosse"),
 	get_node("Ingredient Fledermausflügel"),
@@ -34,7 +33,8 @@ func _input(event):
 			if ingrediantInstatce[i].amount>0:
 				if event.pressed and ingrediantInstatce[i].mouseInside:
 					global.inventory[i] -=1
-					cauldron_colour += global.ingredients[i].position
+					cauldron_colour[0] += global.ingredients[i].position[0]
+					cauldron_colour[1] += global.ingredients[i].position[1]
 					for potion in global.potion_list:
 						if cauldron_colour == potion.recipe:
 							trank(potion.color)
@@ -42,13 +42,7 @@ func _input(event):
 			i += 1
 
 func  trank(c):
-	var o = -72
-	while o<33:
-		var p = -190
-		while p<200:
-			p += 1
-			color.set_cell(0,color.local_to_map(Vector2i(p,o)),1,Vector2i(c%14,int(c/14)),0)
-		o += 1
+	$PotionColor.set_modulate(Color(c[0]/255.01,c[1]/255.01,c[2]/255.01))  
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

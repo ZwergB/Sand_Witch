@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cixomavwldddw"]
+[gd_scene load_steps=5 format=3 uid="uid://cixomavwldddw"]
 
 [ext_resource type="Script" path="res://global.gd" id="1_8y5fg"]
-[ext_resource type="Texture2D" uid="uid://dx6vsb8bbqahj" path="res://assets/unmuted.png" id="2_mfpjr"]
-[ext_resource type="PackedScene" uid="uid://bxm53uj0wdlb2" path="res://outside.tscn" id="3_7jilx"]
+[ext_resource type="Texture2D" uid="uid://d08qlbkmv7s8s" path="res://assets/unmuted.png" id="2_mfpjr"]
 [ext_resource type="PackedScene" uid="uid://bwy08q2xreba2" path="res://title.tscn" id="3_roh6w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ix3w"]
@@ -14,8 +13,6 @@ script = ExtResource("1_8y5fg")
 
 [node name="title" parent="." instance=ExtResource("3_roh6w")]
 z_index = 5
-
-[node name="outside" parent="." instance=ExtResource("3_7jilx")]
 
 [node name="muteButton" type="Button" parent="."]
 z_index = 20
