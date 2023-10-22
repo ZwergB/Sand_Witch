@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxm53uj0wdlb2"]
+[gd_scene load_steps=20 format=3 uid="uid://bxm53uj0wdlb2"]
 
 [ext_resource type="Script" path="res://outside.gd" id="1_d521s"]
 [ext_resource type="Texture2D" uid="uid://degg1464r7kbo" path="res://assets/Outside.jpg" id="2_h0x7c"]
@@ -6,6 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://b1piqo3bewcfy" path="res://assets/frame0000.png" id="4_70w0n"]
 [ext_resource type="Texture2D" uid="uid://cha2u703kq6jv" path="res://assets/frame0001.png" id="5_qivg2"]
 [ext_resource type="AudioStream" uid="uid://bnb4f8m0gxutk" path="res://assets/sounds/outside_Ambient.wav" id="6_5dber"]
+[ext_resource type="Texture2D" uid="uid://bitc0ou3phnlo" path="res://assets/fishframe0000.png" id="7_eijwf"]
+[ext_resource type="Texture2D" uid="uid://d1sft1qpdqpeb" path="res://assets/fishframe0002.png" id="8_1rfxf"]
+[ext_resource type="Texture2D" uid="uid://df3l7e2tt67" path="res://assets/fishframe0004.png" id="9_5qjjb"]
+[ext_resource type="Texture2D" uid="uid://b0uqf8in2voc8" path="res://assets/fishframe0005.png" id="10_tgttw"]
+[ext_resource type="Texture2D" uid="uid://c6ydxdg2y7cn7" path="res://assets/fishframe0006.png" id="11_2nh24"]
+[ext_resource type="Texture2D" uid="uid://c6e2re5bsg6n" path="res://assets/fishframe0008.png" id="12_go60k"]
+[ext_resource type="Texture2D" uid="uid://dfhvdn7mupaet" path="res://assets/fishframe0010.png" id="13_cq0pm"]
+
+[sub_resource type="Curve2D" id="Curve2D_r61pj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -816, -429, 0, 0, 0, 0, -685.911, -446.167, 0, 0, 0, 0, -585, -450, 0, 0, 0, 0, -419, -437, 0, 0, 0, 0, -332, -391, 0, 0, 0, 0, -204, -369, 0, 0, 0, 0, -108, -356, 0, 0, 0, 0, 21, -356, 0, 0, 0, 0, 107, -386, 0, 0, 0, 0, 170, -412, 0, 0, 0, 0, 247, -446, 0, 0, 0, 0, 358, -433, 0, 0, 0, 0, 509, -380, 0, 0, 0, 0, 645, -339, 0, 0, 0, 0, 778, -331, 0, 0, 0, 0, 923, -340, 0, 0, 0, 0, 976, -363, 0, 0, 0, 0, 1081, -389, 0, 0, 0, 0, 1302, -469)
+}
+point_count = 19
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3u2r1"]
 radius = 22.0
@@ -25,6 +38,41 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Curve2D" id="Curve2D_17x33"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cq2lm"]
+radius = 32.8417
+height = 155.977
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jidlk"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("7_eijwf")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_1rfxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5qjjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tgttw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2nh24")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_go60k")
+}, {
+"duration": 2.0,
+"texture": ExtResource("13_cq0pm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
 [node name="outside" type="Node2D"]
 script = ExtResource("1_d521s")
 
@@ -33,31 +81,70 @@ z_index = -10
 texture = ExtResource("2_h0x7c")
 hframes = 2
 vframes = 2
+frame = 3
 
 [node name="Timer1" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 8.0
 autostart = true
-
-[node name="Fledermaus" type="StaticBody2D" parent="."]
-script = ExtResource("3_75vul")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fledermaus"]
-rotation = -0.118682
-shape = SubResource("CapsuleShape2D_3u2r1")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fledermaus"]
-z_index = 1
-position = Vector2(-9, 1)
-sprite_frames = SubResource("SpriteFrames_pr43b")
-frame_progress = 0.790868
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_5dber")
 volume_db = -26.234
 autoplay = true
+
+[node name="FlederWeg" type="Path2D" parent="."]
+position = Vector2(-185, 0)
+curve = SubResource("Curve2D_r61pj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="FlederWeg"]
+position = Vector2(-816, -429)
+rotation = -0.131209
+
+[node name="Fledermaus" type="StaticBody2D" parent="FlederWeg/PathFollow2D"]
+input_pickable = true
+script = ExtResource("3_75vul")
+lifetime = 140
+fullMoonPos = Vector2(-185, 0)
+halfMoonPos = Vector2(-185, 0)
+noMoonPos = Vector2(-185, 0)
+speed = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlederWeg/PathFollow2D/Fledermaus"]
+rotation = -0.118682
+shape = SubResource("CapsuleShape2D_3u2r1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FlederWeg/PathFollow2D/Fledermaus"]
+z_index = 1
+position = Vector2(-9, 1)
+sprite_frames = SubResource("SpriteFrames_pr43b")
+frame_progress = 0.790868
+
+[node name="FischWeg" type="Path2D" parent="."]
+position = Vector2(-395, 124)
+curve = SubResource("Curve2D_17x33")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="FischWeg"]
+
+[node name="Fisch" type="StaticBody2D" parent="FischWeg/PathFollow2D"]
+input_pickable = true
+script = ExtResource("3_75vul")
+lifetime = 40
+fullMoonPos = Vector2(-395, 124)
+halfMoonPos = Vector2(-143, 208)
+noMoonPos = Vector2(-395, 124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FischWeg/PathFollow2D/Fisch"]
+rotation = 1.57952
+shape = SubResource("CapsuleShape2D_cq2lm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FischWeg/PathFollow2D/Fisch"]
+position = Vector2(0, 6)
+sprite_frames = SubResource("SpriteFrames_jidlk")
+frame_progress = 0.340902
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

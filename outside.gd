@@ -5,17 +5,18 @@ extends Node2D
 @onready var time2 = $Timer2
 @onready var background = $Sprite2D
 
-@onready var collectable = [$Fledermaus]
-
-var moonPhase
+@onready var collectable = [get_node("FlederWeg/PathFollow2D/Fledermaus"),get_node("FischWeg/PathFollow2D/Fisch")]
+var numOfItems = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	moonPhase = global.moonPhase
-	background.frame = moonPhase
-
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	background.frame = global.moonPhase
+	if numOfItems>4:
+		numOfItems=0
+		global.moonPhase = (global.moonPhase+1)%4
+		global.changeScene()
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -25,21 +26,35 @@ func _input(event):
 				if event.pressed and collectable[i].mouseInside:
 					collectable[i].active = false
 					global.inventory[i] +=1
+					numOfItems += 1
 			i += 1
 
 func _on_timer_1_timeout():
-	if moonPhase == 0:
+	if global.moonPhase == 0:
 		moon0()
-	if moonPhase == 1:
+	if global.moonPhase == 1:
 		moon1()
-	if moonPhase == 2:
+	if global.moonPhase == 2:
 		moon2()
-	if moonPhase == 3:
+	if global.moonPhase == 3:
 		moon3()
 
 
 func _on_timer_2_timeout():
-	collectable[randi() %collectable.size()].active = true
+	var current = collectable[randi() %collectable.size()]
+	current.age = 0
+	
+	current.sprite.frame = 0
+	
+	
+	if global.moonPhase == 0:
+		current.path.get_parent().position = current.noMoonPos
+	if global.moonPhase == 1 or global.moonPhase == 3:
+		current.path.get_parent().position = current.halfMoonPos
+		current.path.scale = Vector2(-1, 1)
+	if global.moonPhase == 2:
+		current.path.get_parent().position = current.fullMoonPos
+	current.active = true
 	
 func moon0():
 	pass

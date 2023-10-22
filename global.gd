@@ -232,7 +232,7 @@ var inventory = [0,0,0,0,0,0,0]
 
 var moonPhase = 0
 
-var day = true
+var day = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -244,10 +244,13 @@ func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("ui_accept"):
-		if day:
-			remove_child($inside)
-			add_child(nightScene)
-		else:
-			remove_child($outside)
-			add_child(dayScene)
-		day = !day
+		changeScene()
+
+func changeScene():
+	if day:
+		remove_child($inside)
+		add_child(nightScene)
+	else:
+		remove_child($outside)
+		add_child(dayScene)
+	day = !day
