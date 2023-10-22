@@ -320,4 +320,4 @@ autoplay = true
 
 [node name="PotionColor" type="Sprite2D" parent="."]
 position = Vector2(0, -31)
-texture = ExtResource("15_g2q75")
+texture = ExtResource("15_kexdp")
