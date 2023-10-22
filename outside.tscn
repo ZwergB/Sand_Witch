@@ -377,7 +377,7 @@ shape = SubResource("CapsuleShape2D_cq2lm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FischWeg/PathFollow2D/Fisch"]
 position = Vector2(0, 6)
 sprite_frames = SubResource("SpriteFrames_jidlk")
-frame_progress = 0.329975
+frame_progress = 0.481729
 
 [node name="SpinnenWeg" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ega7e")
@@ -398,7 +398,7 @@ shape = SubResource("CircleShape2D_7x2hy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpinnenWeg/PathFollow2D/Spider"]
 sprite_frames = SubResource("SpriteFrames_i5qry")
-frame_progress = 0.105184
+frame_progress = 0.481021
 
 [node name="FroschWeg" type="Path2D" parent="."]
 position = Vector2(816, 180)
@@ -424,7 +424,7 @@ shape = SubResource("CapsuleShape2D_xw6w4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FroschWeg/PathFollow2D/Frosch"]
 position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_iu3wy")
-frame_progress = 0.25882
+frame_progress = 0.446731
 
 [node name="GluewuremchenWeg" type="Path2D" parent="."]
 position = Vector2(465, 295)
@@ -450,7 +450,7 @@ shape = SubResource("CapsuleShape2D_rp3vs")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GluewuremchenWeg/PathFollow2D/Gluewuermchen"]
 position = Vector2(-2, 4)
 sprite_frames = SubResource("SpriteFrames_8cjj8")
-frame_progress = 0.710805
+frame_progress = 0.898716
 
 [node name="BlumenWeg" type="Path2D" parent="."]
 position = Vector2(66, 88)
@@ -471,7 +471,7 @@ shape = SubResource("CapsuleShape2D_ocwv8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BlumenWeg/PathFollow2D/Blume"]
 sprite_frames = SubResource("SpriteFrames_676nv")
-frame_progress = 0.73916
+frame_progress = 0.833125
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
