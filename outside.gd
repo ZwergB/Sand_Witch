@@ -13,6 +13,9 @@ get_node("GluewuremchenWeg/PathFollow2D/Gluewuermchen"),
 get_node("FroschWeg/PathFollow2D/Frosch"),
 get_node("BlumenWeg/PathFollow2D/Blume")
 ]
+
+@onready var clickSound = $itemClicked
+
 var used = false
 var numOfItems = 0
 # Called when the node enters the scene tree for the first time.
@@ -41,6 +44,7 @@ func _input(event):
 					collectable[i].active = false
 					global.inventory[i] +=1
 					numOfItems += 1
+					clickSound.playing = true;
 			i += 1
 
 func _on_timer_1_timeout():
