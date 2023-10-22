@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://7smtn1clgk3f"]
+[gd_scene load_steps=22 format=3 uid="uid://7smtn1clgk3f"]
 
 [ext_resource type="Script" path="res://inside.gd" id="1_kcdjn"]
 [ext_resource type="Texture2D" uid="uid://dm7au4d0ni66i" path="res://assets/Brewing_Space_3.jpg" id="2_1jdsr"]
 [ext_resource type="Texture2D" uid="uid://bj56sg2e1mkq7" path="res://assets/FireAnimatioInside.png" id="3_nck5y"]
 [ext_resource type="Script" path="res://changeSceneButton.gd" id="3_tjk32"]
 [ext_resource type="Texture2D" uid="uid://cekkywpsx8vcb" path="res://assets/raus.png" id="4_a4ckk"]
+[ext_resource type="AudioStream" uid="uid://cb7qcrab85u51" path="res://assets/sounds/inside_Ambient.wav" id="6_h48p1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5heax"]
 size = Vector2(311, 78)
@@ -165,3 +166,8 @@ autoplay = "kesselfeuer"
 libraries = {
 "": SubResource("AnimationLibrary_8y5t3")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_h48p1")
+volume_db = -18.739
+autoplay = true
