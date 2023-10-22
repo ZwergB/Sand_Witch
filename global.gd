@@ -21,13 +21,14 @@ class Ingredient:
 @onready var dayScene = load("res://inside.tscn").instantiate()
 @onready var nightScene = load("res://outside.tscn").instantiate()
 
-var ingredients = [Ingredient.new(0,[2,3],"Glühwürmchen Sekret"), 
-	Ingredient.new(1,[4,-1],"Blut"), 
-	Ingredient.new(2,[0,0],"Mondblume"), 
-	Ingredient.new(3,[0,-3],"Rückenflosse einer Rotfeder"), 
-	Ingredient.new(4,[0,-2],"Fledermausflügel"), 
-	Ingredient.new(5,[2,-2],"Giftdrüse einer Schwarzen Witwe"), 
-	Ingredient.new(6,[-2,0],"Froschschenkel eines Grasfrosches")]
+var ingredients = [
+	Ingredient.new(0,[0,-3],"Rückenflosse einer Rotfeder"), 
+	Ingredient.new(1,[0,-2],"Fledermausflügel"), 
+	Ingredient.new(2,[2,-2],"Giftdrüse einer Schwarzen Witwe"),
+	Ingredient.new(3,[2,3],"Glühwürmchen Sekret"),  
+	Ingredient.new(4,[-2,0],"Froschschenkel eines Grasfrosches"),
+	Ingredient.new(5,[0,0],"Mondblume"), 
+	Ingredient.new(6,[4,-1],"Blut")]
 
 var potion_list = [
 	Potion.new([0, -15], 0, ""),
@@ -230,7 +231,7 @@ var potion_list = [
 
 var inventory = [0,0,0,0,0,0,0]
 
-var moonPhase = 0
+@export var moonPhase = 0
 
 var day = false
 
