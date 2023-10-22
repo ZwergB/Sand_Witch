@@ -27,6 +27,15 @@ func update_colour():
 		cauldron_colour[0] += get_parent().ingredients[i].position[0]
 		cauldron_colour[1] += get_parent().ingredients[i].position[1]
 
+func _input(event):
+	if event is InputEventMouseButton:
+		var i = 0
+		while i<ingrediantInstatce.size():
+			if ingrediantInstatce[i].amount>0:
+				if event.pressed and ingrediantInstatce[i].mouseInside:
+					global.inventory[i] -=1
+			i += 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
