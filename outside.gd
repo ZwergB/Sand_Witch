@@ -10,9 +10,10 @@ get_node("FischWeg/PathFollow2D/Fisch"),
 get_node("FlederWeg/PathFollow2D/Fledermaus"),
 get_node("SpinnenWeg/PathFollow2D/Spider"),
 get_node("GluewuremchenWeg/PathFollow2D/Gluewuermchen"),
-get_node("FroschWeg/PathFollow2D/Frosch")
-
+get_node("FroschWeg/PathFollow2D/Frosch"),
+get_node("BlumenWeg/PathFollow2D/Blume")
 ]
+var used = false
 var numOfItems = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,9 +21,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	background.frame = global.moonPhase
+	if global.moonPhase == 2 and !used:
+		spawn(collectable[5])
+		used=true
+	if global.moonPhase != 2:
+		used = false
 	if numOfItems>4:
 		numOfItems=0
 		global.moonPhase = (global.moonPhase+1)%4
+		global.inventory[6] +=1
 		global.changeScene()
 
 func _input(event):
@@ -37,7 +44,7 @@ func _input(event):
 			i += 1
 
 func _on_timer_1_timeout():
-	var current = collectable[randi()%3+3]
+	var current = collectable[randi()%2+3]
 	spawn(current)
 
 func _on_timer_2_timeout():

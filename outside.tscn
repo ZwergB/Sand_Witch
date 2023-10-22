@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bxm53uj0wdlb2"]
+[gd_scene load_steps=74 format=3 uid="uid://bxm53uj0wdlb2"]
 
 [ext_resource type="Script" path="res://outside.gd" id="1_d521s"]
 [ext_resource type="Texture2D" uid="uid://degg1464r7kbo" path="res://assets/Outside.jpg" id="2_h0x7c"]
@@ -43,10 +43,18 @@
 [ext_resource type="Texture2D" uid="uid://dycyb6guxhl5u" path="res://assets/froschframe0012.png" id="41_erft6"]
 [ext_resource type="Texture2D" uid="uid://dpriigcj20lq1" path="res://assets/froschframe0014.png" id="42_l60so"]
 [ext_resource type="Texture2D" uid="uid://bnfc2k0ktnygq" path="res://assets/fireflyframe0000.png" id="43_v1fmk"]
-[ext_resource type="Texture2D" uid="uid://b048403b2e8u2" path="res://assets/fireflyframe0001.png" id="44_jiq5x"]
 [ext_resource type="Texture2D" uid="uid://0ug8ko5aw7ot" path="res://assets/fireflyframe0002.png" id="45_r0b0j"]
-[ext_resource type="Texture2D" uid="uid://d2fco43wm8nk2" path="res://assets/fireflyframe0003.png" id="46_35iw7"]
+[ext_resource type="Texture2D" uid="uid://blqylrmd2rhas" path="res://assets/fireflyframe0006.png" id="46_qqyho"]
 [ext_resource type="Texture2D" uid="uid://dnstc5s1h4egv" path="res://assets/fireflyframe0004.png" id="47_0vqkw"]
+[ext_resource type="Texture2D" uid="uid://cnajuwpob4qrf" path="res://assets/fireflyframe0008.png" id="47_n74af"]
+[ext_resource type="Texture2D" uid="uid://o4lfhi2j306b" path="res://assets/fireflyframe0010.png" id="48_8fs3e"]
+[ext_resource type="Texture2D" uid="uid://dofhucled30lc" path="res://assets/fireflyframe0012.png" id="49_01j0g"]
+[ext_resource type="Texture2D" uid="uid://dsy4p7dhbll1q" path="res://assets/moonflowerframe0000.png" id="50_8pilt"]
+[ext_resource type="Texture2D" uid="uid://dksg42q2kb0nh" path="res://assets/moonflowerframe0004.png" id="51_p3cyk"]
+[ext_resource type="Texture2D" uid="uid://b2s7647iwvdr" path="res://assets/moonflowerframe0008.png" id="52_1e3jh"]
+[ext_resource type="Texture2D" uid="uid://btmn5snvsgox1" path="res://assets/moonflowerframe0012.png" id="53_1c1mq"]
+[ext_resource type="Texture2D" uid="uid://cfb8dw6ejnsie" path="res://assets/moonflowerframe0016.png" id="54_203tu"]
+[ext_resource type="Texture2D" uid="uid://b8p5dgmk6qih" path="res://assets/moonflowerframe0020.png" id="55_igpgd"]
 
 [sub_resource type="Curve2D" id="Curve2D_r61pj"]
 _data = {
@@ -229,9 +237,14 @@ animations = [{
 }]
 
 [sub_resource type="Curve2D" id="Curve2D_vn8qb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 7, 2, 0, 0, 0, 0, 78, -39, 0, 0, 0, 0, 124, -10, 0, 0, 0, 0, 169, 43, 0, 0, 0, 0, 206, 89, 0, 0, 0, 0, 267, 88, 0, 0, 0, 0, 324, 31)
+}
+point_count = 7
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x5rwc"]
-radius = 23.0868
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rp3vs"]
+radius = 46.0
+height = 141.131
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8cjj8"]
 animations = [{
@@ -240,20 +253,58 @@ animations = [{
 "texture": ExtResource("43_v1fmk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("44_jiq5x")
-}, {
-"duration": 1.0,
 "texture": ExtResource("45_r0b0j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_35iw7")
+"texture": ExtResource("47_0vqkw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_0vqkw")
+"texture": ExtResource("46_qqyho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_n74af")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_8fs3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_01j0g")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_t64bu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocwv8"]
+radius = 28.0
+height = 110.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_676nv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_8pilt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_p3cyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_1e3jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_1c1mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_203tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_igpgd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
 }]
 
 [node name="outside" type="Node2D"]
@@ -264,7 +315,6 @@ z_index = -10
 texture = ExtResource("2_h0x7c")
 hframes = 2
 vframes = 2
-frame = 3
 
 [node name="Timer1" type="Timer" parent="."]
 wait_time = 11.0
@@ -327,7 +377,7 @@ shape = SubResource("CapsuleShape2D_cq2lm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FischWeg/PathFollow2D/Fisch"]
 position = Vector2(0, 6)
 sprite_frames = SubResource("SpriteFrames_jidlk")
-frame_progress = 0.19598
+frame_progress = 0.329975
 
 [node name="SpinnenWeg" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ega7e")
@@ -348,7 +398,7 @@ shape = SubResource("CircleShape2D_7x2hy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpinnenWeg/PathFollow2D/Spider"]
 sprite_frames = SubResource("SpriteFrames_i5qry")
-frame_progress = 0.797142
+frame_progress = 0.105184
 
 [node name="FroschWeg" type="Path2D" parent="."]
 position = Vector2(816, 180)
@@ -374,23 +424,54 @@ shape = SubResource("CapsuleShape2D_xw6w4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FroschWeg/PathFollow2D/Frosch"]
 position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_iu3wy")
-frame_progress = 0.605316
+frame_progress = 0.25882
 
 [node name="GluewuremchenWeg" type="Path2D" parent="."]
+position = Vector2(465, 295)
 curve = SubResource("Curve2D_vn8qb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="GluewuremchenWeg"]
+position = Vector2(7, 2)
+rotation = -0.523685
 
 [node name="Gluewuermchen" type="StaticBody2D" parent="GluewuremchenWeg/PathFollow2D"]
+input_pickable = true
 script = ExtResource("3_75vul")
+lifetime = 120
+fullMoonPos = Vector2(-967, -33)
+halfMoonPos = Vector2(81, 31)
+noMoonPos = Vector2(465, 295)
+speed = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GluewuremchenWeg/PathFollow2D/Gluewuermchen"]
-shape = SubResource("CircleShape2D_x5rwc")
+rotation = 1.33169
+shape = SubResource("CapsuleShape2D_rp3vs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GluewuremchenWeg/PathFollow2D/Gluewuermchen"]
+position = Vector2(-2, 4)
 sprite_frames = SubResource("SpriteFrames_8cjj8")
-frame = 1
-frame_progress = 0.709509
+frame_progress = 0.710805
+
+[node name="BlumenWeg" type="Path2D" parent="."]
+position = Vector2(66, 88)
+curve = SubResource("Curve2D_t64bu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BlumenWeg"]
+
+[node name="Blume" type="StaticBody2D" parent="BlumenWeg/PathFollow2D"]
+input_pickable = true
+script = ExtResource("3_75vul")
+lifetime = 99999999
+fullMoonPos = Vector2(66, 88)
+halfMoonPos = Vector2(-100000, -100000)
+noMoonPos = Vector2(-100000, -100000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlumenWeg/PathFollow2D/Blume"]
+shape = SubResource("CapsuleShape2D_ocwv8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BlumenWeg/PathFollow2D/Blume"]
+sprite_frames = SubResource("SpriteFrames_676nv")
+frame_progress = 0.73916
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
