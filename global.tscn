@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cixomavwldddw"]
+[gd_scene load_steps=4 format=3 uid="uid://cixomavwldddw"]
 
 [ext_resource type="Script" path="res://global.gd" id="1_8y5fg"]
 [ext_resource type="PackedScene" uid="uid://bxm53uj0wdlb2" path="res://outside.tscn" id="3_7jilx"]
+[ext_resource type="PackedScene" uid="uid://bwy08q2xreba2" path="res://title.tscn" id="3_roh6w"]
 
 [node name="global" type="Node2D"]
 script = ExtResource("1_8y5fg")
@@ -9,3 +10,6 @@ script = ExtResource("1_8y5fg")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="outside" parent="." instance=ExtResource("3_7jilx")]
+
+[node name="title" parent="." instance=ExtResource("3_roh6w")]
+script = null
