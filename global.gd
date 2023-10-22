@@ -235,6 +235,23 @@ var inventory = [0,0,0,0,0,0,0]
 
 var day = false
 
+var collection = [
+[],
+[],
+[],
+[],
+[],
+[],
+[],
+[],
+[],
+[],
+[],
+[],
+[],
+[],
+]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
