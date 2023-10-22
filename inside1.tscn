@@ -1,8 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://by1ddjr2ij0ek"]
+[gd_scene load_steps=35 format=3 uid="uid://by1ddjr2ij0ek"]
 
 [ext_resource type="Script" path="res://inside1.gd" id="1_vk6n5"]
 [ext_resource type="Texture2D" uid="uid://lyfcd34hiehn" path="res://assets/Brewing Space 4.jpg" id="2_sgx1l"]
 [ext_resource type="Texture2D" uid="uid://bj56sg2e1mkq7" path="res://assets/FireAnimatioInside.png" id="3_hp0en"]
+[ext_resource type="Script" path="res://Ingredient.gd" id="4_4yyvk"]
 [ext_resource type="Texture2D" uid="uid://c64tdqrdbrnwa" path="res://assets/Blut.png" id="4_ubqgb"]
 [ext_resource type="Theme" path="res://inside_label.tres" id="5_6qdfw"]
 [ext_resource type="Texture2D" uid="uid://bypkagtradl2u" path="res://assets/Fledermausflügel.png" id="6_w0po5"]
@@ -180,6 +181,7 @@ libraries = {
 }
 
 [node name="Ingredient Blut" type="Area2D" parent="."]
+script = ExtResource("4_4yyvk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient Blut"]
 texture = ExtResource("4_ubqgb")
@@ -197,6 +199,7 @@ theme = ExtResource("5_6qdfw")
 text = "255"
 
 [node name="Ingredient Fledermausflügel" type="Area2D" parent="."]
+script = ExtResource("4_4yyvk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient Fledermausflügel"]
 texture = ExtResource("6_w0po5")
@@ -214,6 +217,7 @@ theme = ExtResource("5_6qdfw")
 text = "255"
 
 [node name="Ingredient Froschschenkel" type="Area2D" parent="."]
+script = ExtResource("4_4yyvk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient Froschschenkel"]
 texture = ExtResource("7_odec2")
@@ -231,6 +235,7 @@ theme = ExtResource("5_6qdfw")
 text = "255"
 
 [node name="Ingredient Glühwürmchensekret" type="Area2D" parent="."]
+script = ExtResource("4_4yyvk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient Glühwürmchensekret"]
 texture = ExtResource("8_y3spr")
@@ -248,6 +253,7 @@ theme = ExtResource("5_6qdfw")
 text = "255"
 
 [node name="Ingredient Mondblume" type="Area2D" parent="."]
+script = ExtResource("4_4yyvk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient Mondblume"]
 texture = ExtResource("9_wnhik")
@@ -265,6 +271,7 @@ theme = ExtResource("5_6qdfw")
 text = "255"
 
 [node name="Ingredient Rückenflosse" type="Area2D" parent="."]
+script = ExtResource("4_4yyvk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient Rückenflosse"]
 texture = ExtResource("10_0brtp")
@@ -282,6 +289,7 @@ theme = ExtResource("5_6qdfw")
 text = "255"
 
 [node name="Ingredient Spinnengift" type="Area2D" parent="."]
+script = ExtResource("4_4yyvk")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient Spinnengift"]
 texture = ExtResource("11_wblvn")
