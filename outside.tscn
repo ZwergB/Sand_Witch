@@ -59,7 +59,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_r61pj"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -816, -429, 0, 0, 0, 0, -685.911, -446.167, 0, 0, 0, 0, -585, -450, 0, 0, 0, 0, -419, -437, 0, 0, 0, 0, -332, -391, 0, 0, 0, 0, -204, -369, 0, 0, 0, 0, -108, -356, 0, 0, 0, 0, 21, -356, 0, 0, 0, 0, 107, -386, 0, 0, 0, 0, 170, -412, 0, 0, 0, 0, 247, -446, 0, 0, 0, 0, 358, -433, 0, 0, 0, 0, 509, -380, 0, 0, 0, 0, 645, -339, 0, 0, 0, 0, 778, -331, 0, 0, 0, 0, 923, -340, 0, 0, 0, 0, 976, -363, 0, 0, 0, 0, 1081, -389, 0, 0, 0, 0, 1302, -469)
+"points": PackedVector2Array(0, 0, 0, 0, -816, -429, 0, 0, 0, 0, -699, -443, 0, 0, 0, 0, -585, -450, 0, 0, 0, 0, -419, -437, 0, 0, 0, 0, -332, -391, 0, 0, 0, 0, -204, -369, 0, 0, 0, 0, -108, -356, 0, 0, 0, 0, 21, -356, 0, 0, 0, 0, 107, -386, 0, 0, 0, 0, 170, -412, 0, 0, 0, 0, 247, -446, 0, 0, 0, 0, 358, -433, 0, 0, 0, 0, 509, -380, 0, 0, 0, 0, 645, -339, 0, 0, 0, 0, 778, -331, 0, 0, 0, 0, 923, -340, 0, 0, 0, 0, 976, -363, 0, 0, 0, 0, 1081, -389, 0, 0, 0, 0, 1302, -469)
 }
 point_count = 19
 
@@ -336,16 +336,16 @@ curve = SubResource("Curve2D_r61pj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="FlederWeg"]
 position = Vector2(-816, -429)
-rotation = -0.131205
+rotation = -0.119092
 
 [node name="Fledermaus" type="StaticBody2D" parent="FlederWeg/PathFollow2D"]
 input_pickable = true
 script = ExtResource("3_75vul")
-lifetime = 140
+lifetime = 250
 fullMoonPos = Vector2(-185, 0)
 halfMoonPos = Vector2(-185, 0)
 noMoonPos = Vector2(-185, 0)
-speed = 15
+speed = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FlederWeg/PathFollow2D/Fledermaus"]
 rotation = -0.118682
@@ -366,7 +366,7 @@ curve = SubResource("Curve2D_17x33")
 [node name="Fisch" type="StaticBody2D" parent="FischWeg/PathFollow2D"]
 input_pickable = true
 script = ExtResource("3_75vul")
-lifetime = 40
+lifetime = 100
 fullMoonPos = Vector2(-395, 124)
 halfMoonPos = Vector2(-143, 208)
 noMoonPos = Vector2(-395, 124)
@@ -391,8 +391,8 @@ rotation = 3.08284
 scale = Vector2(-1, -1)
 input_pickable = true
 script = ExtResource("3_75vul")
-lifetime = 50
-speed = 2
+lifetime = 100
+speed = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpinnenWeg/PathFollow2D/Spider"]
 shape = SubResource("CircleShape2D_7x2hy")
