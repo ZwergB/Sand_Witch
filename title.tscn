@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://l3jpix7ohgpl" path="res://assets/Startscreen Press any button Text.png" id="2_hkisn"]
 
 [sub_resource type="Curve2D" id="Curve2D_kpnj6"]
-bake_interval = 14.57
+bake_interval = 0.01
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -267.844, 9.62785, 0, 0, 0, 0, -379.861, 11.9071)
+"points": PackedVector2Array(0, 0, 0, 0, -296.67, 13.9906, 0, 0, 0, 0, -315.649, 14.8856, 0, 0, 0, 0, -296.67, 13.9906)
 }
-point_count = 2
+point_count = 3
 
 [node name="title" type="Node2D"]
 script = ExtResource("1_2oke3")
@@ -22,10 +22,11 @@ rotation = -1.52367
 curve = SubResource("Curve2D_kpnj6")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-267.844, 9.62785)
-rotation = 3.12125
+position = Vector2(-296.67, 13.9906)
+rotation = 3.09447
+rotates = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-227.615, -19.9125)
-rotation = -1.58825
+rotation = -1.5708
 texture = ExtResource("2_hkisn")

@@ -12,4 +12,3 @@ script = ExtResource("1_8y5fg")
 [node name="outside" parent="." instance=ExtResource("3_7jilx")]
 
 [node name="title" parent="." instance=ExtResource("3_roh6w")]
-script = null
