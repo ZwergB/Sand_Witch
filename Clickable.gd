@@ -15,6 +15,7 @@ var age = 0
 func _ready():
 	sprite.play("default")
 	self.mouse_entered.connect(_mouse_enter)
+	self.mouse_exited.connect(_mouse_exit)
 
 func _mouse_enter():
 	mouseInside = true
