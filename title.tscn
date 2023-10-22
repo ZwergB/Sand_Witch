@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwy08q2xreba2"]
+[gd_scene load_steps=5 format=3 uid="uid://bwy08q2xreba2"]
 
 [ext_resource type="Script" path="res://title.gd" id="1_2oke3"]
 [ext_resource type="Texture2D" uid="uid://ocsehf33ost0" path="res://assets/Startscreen.jpg" id="1_pmosn"]
 [ext_resource type="Texture2D" uid="uid://l3jpix7ohgpl" path="res://assets/Startscreen Press any button Text.png" id="2_hkisn"]
+
+[sub_resource type="Curve2D" id="Curve2D_kpnj6"]
+bake_interval = 14.57
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -267.844, 9.62785, 0, 0, 0, 0, -379.861, 11.9071)
+}
+point_count = 2
 
 [node name="title" type="Node2D"]
 script = ExtResource("1_2oke3")
@@ -10,5 +17,15 @@ script = ExtResource("1_2oke3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_pmosn")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Path2D" type="Path2D" parent="."]
+rotation = -1.52367
+curve = SubResource("Curve2D_kpnj6")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-267.844, 9.62785)
+rotation = 3.12125
+
+[node name="Sprite2D2" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-227.615, -19.9125)
+rotation = -1.58825
 texture = ExtResource("2_hkisn")
