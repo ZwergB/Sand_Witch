@@ -34,6 +34,10 @@ func _process(delta):
 		global.moonPhase = (global.moonPhase+1)%4
 		global.inventory[6] +=1
 		global.changeScene()
+		
+	if ($ambientSound.playing != global.musicPlaying):
+		$ambientSound.playing = global.musicPlaying
+	
 
 func _input(event):
 	if event is InputEventMouseButton:

@@ -58,4 +58,12 @@ func _process(delta):
 	var i = 0
 	while i<7:
 		ingrediantInstatce[i].amount = global.inventory[i]
+		if ($ambientSound.playing != global.musicPlaying):
+			$ambientSound.playing = global.musicPlaying
 		i +=1
+
+
+
+func openPotionbook():
+	pass
+

@@ -21,6 +21,8 @@ class Ingredient:
 @onready var dayScene = load("res://inside1.tscn").instantiate()
 @onready var nightScene = load("res://outside.tscn").instantiate()
 
+var musicPlaying = true;
+
 var ingredients = [
 	Ingredient.new(0,[0,-3],"Rückenflosse einer Rotfeder"), 
 	Ingredient.new(1,[0,-2],"Fledermausflügel"), 
@@ -269,8 +271,9 @@ func _input(InputEvent):
 				changeScene()
 		
 
-
-
+	if Input.is_action_pressed("mute"):
+		_on_mute_button_pressed;
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -283,3 +286,8 @@ func changeScene():
 		remove_child($outside)
 		add_child(dayScene)
 	day = !day
+
+
+func _on_mute_button_pressed():
+	musicPlaying = !musicPlaying;
+

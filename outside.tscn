@@ -64,7 +64,7 @@ _data = {
 point_count = 19
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3u2r1"]
-radius = 74.0547
+radius = 74.0545
 height = 148.109
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pr43b"]
@@ -326,7 +326,7 @@ autostart = true
 wait_time = 8.0
 autostart = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="ambientSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_5dber")
 volume_db = -26.234
 autoplay = true

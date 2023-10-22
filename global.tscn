@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cixomavwldddw"]
+[gd_scene load_steps=6 format=3 uid="uid://cixomavwldddw"]
 
 [ext_resource type="Script" path="res://global.gd" id="1_8y5fg"]
+[ext_resource type="Texture2D" uid="uid://dx6vsb8bbqahj" path="res://assets/unmuted.png" id="2_mfpjr"]
 [ext_resource type="PackedScene" uid="uid://bxm53uj0wdlb2" path="res://outside.tscn" id="3_7jilx"]
 [ext_resource type="PackedScene" uid="uid://bwy08q2xreba2" path="res://title.tscn" id="3_roh6w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ix3w"]
 
 [node name="global" type="Node2D"]
 script = ExtResource("1_8y5fg")
@@ -13,3 +16,15 @@ script = ExtResource("1_8y5fg")
 z_index = 5
 
 [node name="outside" parent="." instance=ExtResource("3_7jilx")]
+
+[node name="muteButton" type="Button" parent="."]
+z_index = 20
+offset_left = 859.0
+offset_top = 431.0
+offset_right = 1032.0
+offset_bottom = 543.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5ix3w")
+icon = ExtResource("2_mfpjr")
+flat = true
+
+[connection signal="pressed" from="muteButton" to="." method="_on_mute_button_pressed"]
