@@ -335,7 +335,7 @@ curve = SubResource("Curve2D_r61pj")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="FlederWeg"]
 position = Vector2(-816, -429)
-rotation = -0.131209
+rotation = -0.131205
 
 [node name="Fledermaus" type="StaticBody2D" parent="FlederWeg/PathFollow2D"]
 input_pickable = true
