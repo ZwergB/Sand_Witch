@@ -34,14 +34,21 @@ func _input(event):
 			if ingrediantInstatce[i].amount>0:
 				if event.pressed and ingrediantInstatce[i].mouseInside:
 					global.inventory[i] -=1
-					var o = -72
-					while o<33:
-						var p = -190
-						while p<200:
-							p += 1
-							color.set_cell(0,Vector2i(o,p),1,Vector2i(1,1),0)
-						o += 1
+					cauldron_colour += global.ingredients[i].position
+					for potion in global.potion_list:
+						if cauldron_colour == potion.recipe:
+							trank(potion.color)
+					
 			i += 1
+
+func  trank(c):
+	var o = -72
+	while o<33:
+		var p = -190
+		while p<200:
+			p += 1
+			color.set_cell(0,color.local_to_map(Vector2i(p,o)),1,Vector2i(c%14,int(c/14)),0)
+		o += 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
