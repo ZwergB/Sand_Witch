@@ -461,7 +461,7 @@ curve = SubResource("Curve2D_t64bu")
 [node name="Blume" type="StaticBody2D" parent="BlumenWeg/PathFollow2D"]
 input_pickable = true
 script = ExtResource("3_75vul")
-lifetime = 99999999
+lifetime = 9999
 fullMoonPos = Vector2(66, 88)
 halfMoonPos = Vector2(-100000, -100000)
 noMoonPos = Vector2(-100000, -100000)

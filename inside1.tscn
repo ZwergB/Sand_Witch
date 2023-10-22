@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://by1ddjr2ij0ek"]
+[gd_scene load_steps=34 format=3 uid="uid://by1ddjr2ij0ek"]
 
 [ext_resource type="Script" path="res://inside1.gd" id="1_vk6n5"]
 [ext_resource type="Texture2D" uid="uid://lyfcd34hiehn" path="res://assets/Brewing Space 4.jpg" id="2_sgx1l"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://b726m3sjqqxjj" path="res://assets/Rückenflosse.png" id="10_0brtp"]
 [ext_resource type="Texture2D" uid="uid://c0kvqgjwr2kld" path="res://assets/SPinnengift.png" id="11_wblvn"]
 [ext_resource type="Texture2D" uid="uid://tkeny5dwsyx1" path="res://assets/Brewing Scene pot.png" id="12_a5tfs"]
-[ext_resource type="PackedScene" uid="uid://c7w4ugyx8u8lv" path="res://change_scene_button.tscn" id="13_m7uhl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8btg8"]
 atlas = ExtResource("3_hp0en")
@@ -301,5 +300,3 @@ text = "255"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture = ExtResource("12_a5tfs")
-
-[node name="changeSceneButton" parent="." instance=ExtResource("13_m7uhl")]

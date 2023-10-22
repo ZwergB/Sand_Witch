@@ -18,7 +18,7 @@ class Ingredient:
 		position = _position
 		ingredientName = _ingredientName
 
-@onready var dayScene = load("res://inside.tscn").instantiate()
+@onready var dayScene = load("res://inside1.tscn").instantiate()
 @onready var nightScene = load("res://outside.tscn").instantiate()
 
 var ingredients = [
@@ -249,7 +249,7 @@ func _process(delta):
 
 func changeScene():
 	if day:
-		remove_child($inside)
+		remove_child($inside1)
 		add_child(nightScene)
 	else:
 		remove_child($outside)

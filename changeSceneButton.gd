@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -11,7 +13,4 @@ func _process(delta):
 func _input(event):
    # This fakes a enter input and changes the scene
 	if event is InputEventMouseButton:
-		var fake_press = InputEventAction.new()
-		fake_press.action = "ui_accept"
-		fake_press.pressed = true
-		Input.parse_input_event(fake_press)
+		get_parent().global.changeScene()

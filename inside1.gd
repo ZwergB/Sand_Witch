@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var ingredients = get_parent().ingredients
+@onready var global = get_parent()
 
 var cauldron = []
 var cauldron_colour = [0,0]
