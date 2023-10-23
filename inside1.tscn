@@ -1,20 +1,20 @@
 [gd_scene load_steps=37 format=3 uid="uid://by1ddjr2ij0ek"]
 
 [ext_resource type="Script" path="res://inside1.gd" id="1_vk6n5"]
-[ext_resource type="Texture2D" uid="uid://lyfcd34hiehn" path="res://assets/Brewing Space 4.jpg" id="2_sgx1l"]
+[ext_resource type="Texture2D" uid="uid://bnopwxkwky5js" path="res://assets/Brewing Space 4.jpg" id="2_sgx1l"]
 [ext_resource type="Texture2D" uid="uid://bj56sg2e1mkq7" path="res://assets/FireAnimatioInside.png" id="3_hp0en"]
 [ext_resource type="Script" path="res://Ingredient.gd" id="4_4yyvk"]
-[ext_resource type="Texture2D" uid="uid://c64tdqrdbrnwa" path="res://assets/Blut.png" id="4_ubqgb"]
-[ext_resource type="Theme" path="res://inside_label.tres" id="5_6qdfw"]
-[ext_resource type="Texture2D" uid="uid://bypkagtradl2u" path="res://assets/Fledermausflügel.png" id="6_w0po5"]
-[ext_resource type="Texture2D" uid="uid://b4aq3jdcdjhx4" path="res://assets/Froschschenkel.png" id="7_odec2"]
-[ext_resource type="Texture2D" uid="uid://cnv242ustrpqy" path="res://assets/GlühwürmchenSekret.png" id="8_y3spr"]
-[ext_resource type="Texture2D" uid="uid://w4wn8gefxjvw" path="res://assets/Mondblume.png" id="9_wnhik"]
-[ext_resource type="Texture2D" uid="uid://b726m3sjqqxjj" path="res://assets/Rückenflosse.png" id="10_0brtp"]
-[ext_resource type="Texture2D" uid="uid://c0kvqgjwr2kld" path="res://assets/SPinnengift.png" id="11_wblvn"]
+[ext_resource type="Texture2D" uid="uid://cujpsevx2l2qo" path="res://assets/Blut.png" id="4_ubqgb"]
+[ext_resource type="Theme" uid="uid://0y40gsdf1jjn" path="res://inside_label.tres" id="5_6qdfw"]
+[ext_resource type="Texture2D" uid="uid://do178whxev35x" path="res://assets/Fledermausflügel.png" id="6_w0po5"]
+[ext_resource type="Texture2D" uid="uid://dls25f2iprlj5" path="res://assets/Froschschenkel.png" id="7_odec2"]
+[ext_resource type="Texture2D" uid="uid://b5wodnw832l6g" path="res://assets/GlühwürmchenSekret.png" id="8_y3spr"]
+[ext_resource type="Texture2D" uid="uid://cwdcpjy56xii4" path="res://assets/Mondblume.png" id="9_wnhik"]
+[ext_resource type="Texture2D" uid="uid://puvn0o35cogy" path="res://assets/Rückenflosse.png" id="10_0brtp"]
+[ext_resource type="Texture2D" uid="uid://cw6ybdql0c5dm" path="res://assets/SPinnengift.png" id="11_wblvn"]
 [ext_resource type="Texture2D" uid="uid://tkeny5dwsyx1" path="res://assets/Brewing Scene pot.png" id="12_a5tfs"]
 [ext_resource type="AudioStream" uid="uid://wncgq6dvssky" path="res://assets/sounds/inside_Ambient.wav" id="15_3dre6"]
-[ext_resource type="Texture2D" uid="uid://c020nlis20jae" path="res://assets/archive mask.png" id="15_g2q75"]
+[ext_resource type="Texture2D" uid="uid://8lirni8dqf5h" path="res://assets/potMask.png" id="15_rtub8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8btg8"]
 atlas = ExtResource("3_hp0en")
@@ -320,4 +320,4 @@ autoplay = true
 
 [node name="PotionColor" type="Sprite2D" parent="."]
 position = Vector2(0, -31)
-texture = ExtResource("15_ax06w")
+texture = ExtResource("15_rtub8")
